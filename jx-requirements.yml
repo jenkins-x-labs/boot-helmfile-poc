@@ -4,7 +4,6 @@ autoUpdate:
 bootConfigURL: https://github.com/jenkins-x/jenkins-x-boot-config.git
 cluster:
   clusterName: ""
-  clusterName: palmlace
   devEnvApprovers:
   - rawlingsj
   environmentGitOwner: cb-kubecd
@@ -19,7 +18,7 @@ cluster:
   zone: europe-west1-b
 environments:
 - ingress:
-    domain: 35.233.2.14.nip.io
+    domain: ""
     externalDNS: false
     namespaceSubDomain: -jx.
     tls:
