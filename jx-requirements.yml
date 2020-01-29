@@ -1,11 +1,12 @@
 autoUpdate:
   enabled: false
   schedule: ""
-bootConfigURL: https://github.com/jenkins-x/jenkins-x-boot-config.git
+bootConfigURL: https://github.com/jenkins-x-labs/boot-helmfile-poc.git
 cluster:
-  clusterName: ""
+  clusterName: "UPDATE_ME"
   devEnvApprovers:
   - rawlingsj
+  - jstrachan
   environmentGitOwner: cb-kubecd
   environmentGitPublic: true
   gitKind: github
@@ -15,7 +16,7 @@ cluster:
   namespace: jx
   project: jx-development
   provider: gke
-  zone: europe-west1-b
+  zone: "UPDATE_ME"
 environments:
 - ingress:
     domain: ""
@@ -26,7 +27,6 @@ environments:
       enabled: false
       production: false
   key: dev
-  repository: environment-palmlace-dev
 - ingress:
     domain: ""
     externalDNS: false
@@ -36,7 +36,6 @@ environments:
       enabled: false
       production: false
   key: staging
-  repository: environment-palmlace-staging
 - ingress:
     domain: ""
     externalDNS: false
@@ -46,10 +45,10 @@ environments:
       enabled: false
       production: false
   key: production
-  repository: environment-palmlace-production
 gitops: true
+helmfile: true
 ingress:
-  domain: 35.233.2.14.nip.io
+  domain: ""
   externalDNS: false
   namespaceSubDomain: -jx.
   tls:
