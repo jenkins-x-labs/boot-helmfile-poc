@@ -1,6 +1,8 @@
 # generated files
 jx-requirements.values.yaml.gotmpl
 apps/helmfile.yaml
+system/helmfile.yaml
+system/generated
 
 # IDE files
 .idea

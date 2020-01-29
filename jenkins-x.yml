@@ -84,6 +84,17 @@ pipelineConfig:
             command: jx
             name: install-jx-crds
           - args:
+            - step
+            - create
+            - helmfile
+            - --values
+            - $JX_SECRETS_DIR/secrets.yaml
+            - --values
+            - ../jx-requirements.values.yaml.gotmpl
+            command: jx
+            dir: /workspace/source
+            name: generate-helmfile
+          - args:
             - sync
             command: helmfile
             dir: /workspace/source/system
@@ -95,23 +106,10 @@ pipelineConfig:
             - values
             - -b
             - --ingress-namespace=nginx
-            - --ingress-service=nginx-nginx-ingress-controller
+            - --ingress-service=nginx-ingress-controller
             command: jx
             dir: /workspace/source
             name: verify-ingress
-          - args:
-            - exp
-            - create
-            - helmfile
-            - --values
-            - $JX_SECRETS_DIR/secrets.yaml
-            - --values
-            - ../jx-requirements.values.yaml.gotmpl
-            - --outputDir
-            - ./apps
-            command: jx
-            dir: /workspace/source
-            name: generate-helmfile
           - args:
             - sync
             command: helmfile

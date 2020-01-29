@@ -12,3 +12,7 @@ applications:
   repository: https://storage.googleapis.com/chartmuseum.jenkins-x.io
 - name: repositories
   repository: ".."
+- name: nginx-ingress
+  repository: https://kubernetes-charts.storage.googleapis.com
+  phase: system
+  namespace: nginx
